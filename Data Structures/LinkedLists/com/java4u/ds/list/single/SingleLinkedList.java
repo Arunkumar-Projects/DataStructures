@@ -19,6 +19,13 @@ public class SingleLinkedList  {
 		return length;
 	}
 
+	public void display(Node head){
+		Node currentNode= head;
+		while(currentNode!=null){
+			System.out.println(currentNode.getData());
+			currentNode= currentNode.getNext();
+		}
+	}
 	public boolean isEmpty(Node headNode) {
 		if(headNode==null){
 			return true;

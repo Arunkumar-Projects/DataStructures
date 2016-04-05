@@ -1,10 +1,10 @@
 package com.java4u.ds.list.dto;
 
 public class Node {
-	private int data;
+	private Object data;
 	private Node next;
 
-	public int getData() {
+	public Object getData() {
 		return data;
 	}
 
@@ -20,7 +20,7 @@ public class Node {
 		this.next = next;
 	}
 
-	Node(int data) {
+	public Node(Object data) {
 		this.data = data;
 	}
 
