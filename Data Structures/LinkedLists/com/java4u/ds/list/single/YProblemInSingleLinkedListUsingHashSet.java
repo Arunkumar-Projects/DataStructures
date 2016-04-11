@@ -41,7 +41,7 @@ public class YProblemInSingleLinkedListUsingHashSet {
 	}
 
 	private static Node getLinkedNodeFound(Node h1, Node h2) {
-		SingleLinkedList list= new SingleLinkedList();
+		//SingleLinkedList list= new SingleLinkedList();
 		HashSet<Object> set=new HashSet<Object>();
 		
 		while(h1!=null){

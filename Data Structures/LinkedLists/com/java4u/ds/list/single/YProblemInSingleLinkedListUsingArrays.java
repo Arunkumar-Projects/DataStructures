@@ -60,6 +60,8 @@ public class YProblemInSingleLinkedListUsingArrays {
 		Node h2= new Node(new Integer(43));
 		Node hn1= new Node(new Integer(46));
 		Node hn2= new Node(new Integer(66));
+		h2.setNext(hn1);
+		hn1.setNext(hn2);
 		hn2.setNext(n3);
 		
 		isLinkedNodeFound(h1, h2);
