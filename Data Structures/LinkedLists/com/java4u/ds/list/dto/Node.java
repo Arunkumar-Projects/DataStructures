@@ -4,6 +4,10 @@ public class Node {
 	private Object data;
 	private Node next;
 
+	public Node() {
+
+	}
+
 	public Object getData() {
 		return data;
 	}
