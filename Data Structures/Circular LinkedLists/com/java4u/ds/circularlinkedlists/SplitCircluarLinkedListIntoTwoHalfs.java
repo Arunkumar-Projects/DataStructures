@@ -20,12 +20,12 @@ public class SplitCircluarLinkedListIntoTwoHalfs {
 
 	void printList(Node node) {
 		Node temp = node;
-        if (node != null) {
-            do {
-                System.out.print(temp.data + " ");
-                temp = temp.next;
-            } while (temp != node);
-        }
+		if (node != null) {
+			do {
+				System.out.print(temp.data + " ");
+				temp = temp.next;
+			} while (temp != node);
+		}
 	}
 
 	void splitCircularList() {
@@ -36,7 +36,7 @@ public class SplitCircluarLinkedListIntoTwoHalfs {
 			return;
 		}
 
-		if (fast_ptr.next != head && slow_ptr.next.next != head) {
+		while (fast_ptr.next != head && slow_ptr.next.next != head) {
 			fast_ptr = fast_ptr.next.next;
 			slow_ptr = slow_ptr.next;
 		}
@@ -53,25 +53,26 @@ public class SplitCircluarLinkedListIntoTwoHalfs {
 		fast_ptr.next = slow_ptr.next;
 		slow_ptr.next = head;
 	}
-	
+
 	public static void main(String[] args) {
 		SplitCircluarLinkedListIntoTwoHalfs list = new SplitCircluarLinkedListIntoTwoHalfs();
 		list.head = new Node(12);
-        list.head.next = new Node(56);
-        list.head.next.next = new Node(2);
-        list.head.next.next.next = new Node(11);
-        list.head.next.next.next.next = list.head;
-        
-        System.out.println("Original Circular Linked list ");
-        list.printList(head);
- 
-        // Split the list
-        list.splitCircularList();
-        System.out.println("");
-        System.out.println("First Circular List ");
-        list.printList(head1);
-        System.out.println("");
-        System.out.println("Second Circular List ");
-        list.printList(head2);
+		list.head.next = new Node(56);
+		list.head.next.next = new Node(2);
+		list.head.next.next.next = new Node(33);
+		list.head.next.next.next.next = new Node(11);
+		list.head.next.next.next.next.next = list.head;
+
+		System.out.println("Original Circular Linked list ");
+		list.printList(head);
+
+		// Split the list
+		list.splitCircularList();
+		System.out.println("");
+		System.out.println("First Circular List ");
+		list.printList(head1);
+		System.out.println("");
+		System.out.println("Second Circular List ");
+		list.printList(head2);
 	}
 }
