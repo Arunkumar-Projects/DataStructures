@@ -72,6 +72,6 @@ public class BinarySearchTree {
 				parent.setRightChild(current.getRightChild());
 			}
 		}
-
+		
 	}
 }

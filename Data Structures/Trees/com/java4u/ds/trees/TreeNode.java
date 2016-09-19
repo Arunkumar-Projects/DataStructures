@@ -4,6 +4,7 @@ public class TreeNode {
 	private Integer data;
 	private TreeNode leftChild;
 	private TreeNode rightChild;
+	private boolean isDeleted=false;
 
 	public TreeNode(Integer data) {
 		super();
@@ -63,4 +64,5 @@ public class TreeNode {
 			}
 		}
 	}
+	
 }
