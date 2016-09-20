@@ -32,6 +32,43 @@ public class SpiralOrderPrinting2DMatrix {
 		}
 	}
 
+	public void printSpiralOrderUsingDirection(int A[][], int m, int n) {
+		int columnStart = 0;
+		int columnEnd = m - 1;
+		int rowStart = 0;
+		int rowEnd = n - 1;
+		int dir = 0;
+		while (columnStart <= columnEnd && rowStart <= rowEnd) {
+			if (dir == 0) {
+				for (int i = columnStart; i <= columnEnd; i++) {
+					System.out.print(" " + A[rowStart][i]);
+				}
+				dir = 1;
+				rowStart++;
+			} else if (dir == 1) {
+				for (int i = rowStart; i <= rowEnd; i++) {
+					System.out.print(" " + A[i][columnEnd]);
+				}
+				dir = 2;
+				columnEnd--;
+			} else if (dir == 2) {
+				for (int i = columnEnd; i >= columnStart; i--) {
+					System.out.print(" " + A[rowEnd][i]);
+				}
+				dir = 3;
+				rowEnd--;
+			} else if (dir == 3) {
+				for (int i = rowEnd; i >= rowStart; i--) {
+					System.out.print(" " + A[i][columnStart]);
+				}
+				columnStart++;
+				dir = 0;
+			}
+
+		}
+
+	}
+
 	void print2dMatrix(int A[][], int m, int n) {
 		for (int i = 0; i <= m - 1; i++) {
 			for (int j = 0; j <= n - 1; j++) {
@@ -47,7 +84,8 @@ public class SpiralOrderPrinting2DMatrix {
 		System.out.println();
 
 		solution.printSpiralOrder(A, 4, 4);
-
+		System.out.println();
+		solution.printSpiralOrderUsingDirection(A, 4, 4);
 	}
 
 }
