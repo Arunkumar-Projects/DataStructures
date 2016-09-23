@@ -17,6 +17,12 @@
 	<classpathentry kind="src" path="Interview Programs"/>
 	<classpathentry kind="src" path="DoubleLinkedLists"/>
 	<classpathentry kind="src" path="Arrays"/>
+	<classpathentry kind="src" path="BackTracking"/>
+	<classpathentry kind="src" path="Dynamic Programming"/>
+	<classpathentry kind="src" path="Numeric Methods"/>
+	<classpathentry kind="src" path="Other Algorithmic Problems"/>
+	<classpathentry kind="src" path="Recursion"/>
+	<classpathentry kind="src" path="Selection Algorithms"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
