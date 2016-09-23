@@ -31,9 +31,9 @@ public class NQueensSolution {
 			if (nQueensArray[i] == columnIndex)
 				return false; // same column
 			if ((i - rowIndex) == (nQueensArray[i] - columnIndex))
-				return false; // for ascending .. tehat bal fentrol megy jobb le
+				return false; // for ascending .. 
 			if ((i - rowIndex) == (columnIndex - nQueensArray[i]))
-				return false; // for descending...tehat jobb fentrol megy bal le
+				return false; // for descending...
 		}
 		return true;
 
