@@ -1,158 +1,168 @@
 package com.java4u.ds.list.single;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+/**
+ * Created by Arun on 11/13/2016.
+ */
+public class SingleLinkedList {
+    Node head;
+    int size = 0;
 
-import com.java4u.ds.list.dto.Node;
+    public SingleLinkedList(Node head) {
+        this.head = head;
+    }
 
-public class SingleLinkedList  {
-	
-	public int size(Node headNode) {
-		int length=0;
-		Node currentNode= headNode;
-		while(currentNode!=null){
-			currentNode= currentNode.getNext();
-			length++;
-		}
-		return length;
-	}
+    public void traverse() {
+        Node currentNode = head;
+        while (currentNode != null) {
+            System.out.println(currentNode.getData());
+            currentNode = currentNode.getNext();
+        }
+    }
 
-	public void display(Node head){
-		Node currentNode= head;
-		while(currentNode!=null){
-			System.out.println(currentNode.getData());
-			currentNode= currentNode.getNext();
-		}
-	}
-	public boolean isEmpty(Node headNode) {
-		if(headNode==null){
-			return true;
-		}
-		return false;
-	}
+    public int getSize() {
+        return size;
+    }
 
-	public boolean contains(Node item, Node headNode) {
-		Node CurrentNode;
-		return false;
-	}
+    public boolean isEmpty() {
+        if (head == null) {
+            return true;
+        }
+        return false;
+    }
 
-	public Iterator<Node> iterator() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public void append(int data) {
+        //creating new Node
+        Node newNode = new Node(data);
+        // is FirstNode
+        if (isEmpty()) {
+            head = newNode;
+            size++;
+            return;
+        }
+        // Insert in the middle
+        Node currentNode = head;
+        while (currentNode.getNext() != null) {
+            currentNode = currentNode.getNext();
+        }
+        if (currentNode.getNext() == null) {
+            currentNode.setNext(newNode);
+            size++;
+        }
+    }
 
-	public Object[] toArray() {
-		
-		return null;
-	}
+    public void delete(int data) {
+        if (isEmpty()) {
+            System.out.println("List is Empty Cannot delete any Node");
+            return;
+        } else {
+            Node prev = head;
+            Node current = head.getNext();
+            while (current != null) {
+                if (current.getData() == data) {
+                    prev.setNext(current.getNext());
+                    current.setNext(null);
+                    size--;
+                    return;
+                } else {
+                    prev = current;
+                    current = current.getNext();
+                }
+            }
 
-	public <T> T[] toArray(T[] a) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-//
-//	@Override
-//	public boolean add(E e) {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
-//
-//	@Override
-//	public boolean remove(Object o) {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
-//
-//	@Override
-//	public boolean containsAll(Collection<?> c) {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
-//
-//	@Override
-//	public boolean addAll(Collection<? extends E> c) {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
-//
-//	@Override
-//	public boolean addAll(int index, Collection<? extends E> c) {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
-//
-//	@Override
-//	public boolean removeAll(Collection<?> c) {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
-//
-//	@Override
-//	public boolean retainAll(Collection<?> c) {
-//		// TODO Auto-generated method stub
-//		return false;
-//	}
-//
-//	public void clear(Node headNode) {
-//		headNode=null;
-//		System.gc();
-//	}
-//
-//	@Override
-//	public E get(int index) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public E set(int index, E element) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public void add(int index, E element) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//
-//	@Override
-//	public E remove(int index) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public int indexOf(Object o) {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
-//
-//	@Override
-//	public int lastIndexOf(Object o) {
-//		// TODO Auto-generated method stub
-//		return 0;
-//	}
-//
-//	@Override
-//	public ListIterator<E> listIterator() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public ListIterator<E> listIterator(int index) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	@Override
-//	public List<E> subList(int fromIndex, int toIndex) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
+        }
+    }
 
- 
+    public void insertAtBeginning(int data) {
+        Node newNode = new Node(data);
+        if (isEmpty()) {
+            head = newNode;
+            size++;
+            return;
+        }
+        Node currentNode = head;
+        newNode.setNext(currentNode);
+        head = newNode;
+        size++;
+        return;
+    }
+
+    public void deleteAtBeginning() {
+        if (isEmpty()) {
+            System.out.println("List is Empty!!  Cannot delete any Node");
+            return;
+        } else {
+            Node tempNode = head;
+            head = head.getNext();
+            tempNode.setNext(null);
+            size--;
+            return;
+        }
+    }
+
+    public void deleteAtEnd() {
+        if (isEmpty()) {
+            System.out.println("List is Empty!! Cannot delete any Node");
+            return;
+        } else {
+            Node prev = head;
+            Node current = head.getNext();
+            while (current.getNext() != null) {
+                prev = current;
+                current = current.getNext();
+            }
+            if (current.next == null) {
+                prev.setNext(null);
+                size--;
+                return;
+            }
+        }
+    }
+
+    public void insertAtPosition(int data, int position) {
+        Node node = new Node(data);
+        int size = getSize();
+        if (isEmpty()) {
+            node = head;
+            size++;
+            return;
+        }
+        if (position < 0) {
+            position = 0;
+        }
+        if (position > size) {
+            position = size;
+        } else if (position == 0) {
+            Node tempNode = node;
+            tempNode.setNext(head);
+            head = tempNode;
+            size++;
+            return;
+        } else {
+            Node tempNode = head;
+            for (int i = 1; i < position; i++) {
+                tempNode = tempNode.getNext();
+            }
+            node.setNext(tempNode.getNext());
+            tempNode.setNext(node);
+            size++;
+            return;
+        }
+    }
+
+    public int getElementAtPosition(int position){
+        Node currentNode= head;
+        if(isEmpty()){
+            System.out.println("Element cannot be retrieved !! No List found");
+            return -1;
+        }
+        if(position=<0){
+            position=0
+        }
+        if(position>size){
+
+        }
+        while(currentNode!=null){
+            currentNode= currentNode.getNext()
+        }
+    }
 }

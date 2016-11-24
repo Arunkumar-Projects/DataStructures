@@ -56,12 +56,12 @@ public class SplitCircluarLinkedListIntoTwoHalfs {
 
 	public static void main(String[] args) {
 		SplitCircluarLinkedListIntoTwoHalfs list = new SplitCircluarLinkedListIntoTwoHalfs();
-		list.head = new Node(12);
-		list.head.next = new Node(56);
-		list.head.next.next = new Node(2);
-		list.head.next.next.next = new Node(33);
-		list.head.next.next.next.next = new Node(11);
-		list.head.next.next.next.next.next = list.head;
+		head = new Node(12);
+		head.next = new Node(56);
+		head.next.next = new Node(2);
+		head.next.next.next = new Node(33);
+		head.next.next.next.next = new Node(11);
+		head.next.next.next.next.next = head;
 
 		System.out.println("Original Circular Linked list ");
 		list.printList(head);
