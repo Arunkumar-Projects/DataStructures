@@ -7,6 +7,9 @@ public class SingleLinkedList {
     Node head;
     int size = 0;
 
+    public SingleLinkedList(){
+
+    }
     public SingleLinkedList(Node head) {
         this.head = head;
     }
@@ -150,19 +153,20 @@ public class SingleLinkedList {
     }
 
     public int getElementAtPosition(int position){
-        Node currentNode= head;
-        if(isEmpty()){
-            System.out.println("Element cannot be retrieved !! No List found");
-            return -1;
-        }
-        if(position=<0){
-            position=0
-        }
-        if(position>size){
-
-        }
-        while(currentNode!=null){
-            currentNode= currentNode.getNext()
-        }
+//        Node currentNode= head;
+//        if(isEmpty()){
+//            System.out.println("Element cannot be retrieved !! No List found");
+//            return -1;
+//        }
+//        if(position=<0){
+//            position=0
+//        }
+//        if(position>size){
+//
+//        }
+//        while(currentNode!=null){
+//            currentNode= currentNode.getNext()
+//        }
+        return 0;
     }
 }

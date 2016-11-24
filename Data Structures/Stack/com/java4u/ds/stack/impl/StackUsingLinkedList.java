@@ -2,10 +2,10 @@ package com.java4u.ds.stack.impl;
 
 public class StackUsingLinkedList {
 
-    Node top;
+    Node top=null;
     int size=0;
-    StackUsingLinkedList(Node h){
-        this.top=h;
+    StackUsingLinkedList(){
+
     }
 
     public void push(int data){
