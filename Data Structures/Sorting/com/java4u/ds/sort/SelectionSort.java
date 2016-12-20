@@ -15,7 +15,6 @@ public class SelectionSort {
 			a[pos] = a[min];
 			a[min] = temp;
 		}
-		
 	}
 
 	public void print(int a[]) {
