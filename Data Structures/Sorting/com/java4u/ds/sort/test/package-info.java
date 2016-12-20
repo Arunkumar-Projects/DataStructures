@@ -5,4 +5,4 @@
  * @author Arun
  *
  */
-package com.java4u.ds.sorting;
+package com.java4u.ds.sort.test;
