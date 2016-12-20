@@ -12,10 +12,12 @@ public class StackUsingLinkedList {
         Node node = new Node(data);
         if(top==null){
             top= node;
+            size++;
         }
         else{
-            node.setNext(top);
-            node=top;
+            Node temp= top;
+            node.setNext(temp);
+            top=node;
             size++;
         }
     }
