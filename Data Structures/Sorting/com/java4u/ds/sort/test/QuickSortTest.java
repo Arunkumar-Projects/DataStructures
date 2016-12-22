@@ -6,7 +6,8 @@ public class QuickSortTest {
 
 	public static void main(String[] args) {
 		QuickSort sort= new QuickSort();
-		int a[]={25,10,30,15,5};
+		int a[]={25,10,30,15,5,20};
+		sort.print(a);
 		sort.quickSort(a);
 		sort.print(a);
 

@@ -4,7 +4,6 @@ public class QuickSort {
 
 	public void quickSort(int[] a) {
 		quickSort(a, 0, a.length - 1);
-		print(a);
 	}
 
 	private void quickSort(int[] a, int low, int high) {
@@ -12,10 +11,10 @@ public class QuickSort {
 			return;
 		} else {
 			int paritionIndex = parition(a, low, high);
-			quickSort(a, low, paritionIndex - 1);
-			quickSort(a, paritionIndex - 1, high);
+			quickSort(a, low, paritionIndex);
+			quickSort(a, paritionIndex+1, high);
 		}
-		
+
 	}
 
 	private int parition(int a[], int low, int high) {
@@ -23,20 +22,18 @@ public class QuickSort {
 		int left = low;
 		int right = high;
 		while (left < right) {
-			while (a[left] <= pivot && pivot != a[left]) {
+			while (a[left] < pivot && a[left]!=pivot) {
 				left++;
 			}
-			while (a[right] >= pivot && pivot != a[right]) {
-				right++;
+			while (a[right] > pivot && a[right]!=pivot) {
+				right--;
 			}
 			if (left < right) {
 				int temp = a[left];
 				a[left] = a[right];
 				a[right] = temp;
 			} else {
-				int temp = a[low];
-				a[low] = a[right];
-				a[right] = temp;
+				return right;
 			}
 		}
 		return right;
