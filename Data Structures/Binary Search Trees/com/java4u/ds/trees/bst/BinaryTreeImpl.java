@@ -6,6 +6,15 @@ public class BinaryTreeImpl {
 	private int size = 0;
 	private BSTNode root = null;
 
+	public boolean isLeafNode(BSTNode root) {
+		if (root == null) {
+			return true;
+		} else if (root.getLeft() == null && root.getRight() == null) {
+			return true;
+		}
+		return false;
+	}
+
 	public int getSize() {
 		return size;
 	}
@@ -15,6 +24,25 @@ public class BinaryTreeImpl {
 			return true;
 		}
 		return false;
+	}
+
+	public void insertRecursive(BSTNode root, int data) {
+		root = insertRecursiveHelper(root, data);
+	}
+
+	public BSTNode insertRecursiveHelper(BSTNode root, int data) {
+		BSTNode node = new BSTNode(data);
+		if (isEmpty(root)) {
+			root = node;
+			size++;
+		} else if (data < root.getData()) {
+			BSTNode left = insertRecursiveHelper(root.getLeft(), data);
+			root.setLeft(left);
+		} else {
+			BSTNode right = insertRecursiveHelper(root.getRight(), data);
+			root.setRight(right);
+		}
+		return root;
 	}
 
 	public void insert(BSTNode root, int data) {
@@ -34,11 +62,11 @@ public class BinaryTreeImpl {
 					root.setLeft(root);
 				}
 			} else if (data >= root.getData()) {
-				if(root.getRight()== null){
+				if (root.getRight() == null) {
 					root.setRight(node);
 					size++;
 					return;
-				}else{
+				} else {
 					root.setRight(root);
 				}
 			}
@@ -56,7 +84,7 @@ public class BinaryTreeImpl {
 			return -1;
 		}
 		while (root.getRight() != null) {
-			root.setRight(root.getRight());
+			root.setRight(root);
 			if (root.getRight() == null) {
 				return root.getData();
 			}
@@ -70,7 +98,7 @@ public class BinaryTreeImpl {
 			return -1;
 		}
 		while (root.getLeft() != null) {
-			root.setLeft(root.getLeft());
+			root.setLeft(root);
 			if (root.getLeft() == null) {
 				return root.getData();
 			}
