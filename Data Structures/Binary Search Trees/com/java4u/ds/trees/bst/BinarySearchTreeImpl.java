@@ -2,7 +2,7 @@ package com.java4u.ds.trees.bst;
 
 import com.java4u.ds.trees.bst.BSTNode;
 
-public class BinaryTreeImpl {
+public class BinarySearchTreeImpl {
 	private int size = 0;
 	private BSTNode root = null;
 
@@ -74,6 +74,7 @@ public class BinaryTreeImpl {
 
 	}
 
+	//TODO: Add Implementation
 	public void delete(int data) {
 
 	}
@@ -138,6 +139,7 @@ public class BinaryTreeImpl {
 		}
 	}
 
+	//TODO: Add Implementation
 	public void levelOrderTraversal(BSTNode root) {
 
 	}

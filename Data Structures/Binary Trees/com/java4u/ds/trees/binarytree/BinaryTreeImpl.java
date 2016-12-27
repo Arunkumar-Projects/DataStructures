@@ -1,5 +1,6 @@
 package com.java4u.ds.trees.binarytree;
 
+import java.util.PriorityQueue;
 import java.util.Queue;
 
 import com.sun.xml.internal.ws.encoding.soap.SOAP12Constants;
@@ -19,9 +20,9 @@ public class BinaryTreeImpl {
 			int left = getSizeByTrversing(root.getLeft());
 			int right = getSizeByTrversing(root.getRight());
 			return (1 + left + right);
-			// one line statement for above code
-			// return (1+
-			// getSizeByTrversing(root.getLeft())+getSizeByTrversing(root.getRight()));
+
+			// return
+			// (1+getSizeByTrversing(root.getLeft())+getSizeByTrversing(root.getRight()));
 		}
 	}
 
@@ -32,9 +33,9 @@ public class BinaryTreeImpl {
 			int left = getHeight(root.getLeft());
 			int right = getHeight(root.getRight());
 			return (1 + Math.max(left, right));
-			// one line statement for above code
-			// return (1+Math.max(
-			// getHeight(root.getLeft()),getHeight(root.getRight()));
+
+			// return
+			// (1+Math.max(getHeight(root.getLeft()),getHeight(root.getRight()));
 		}
 	}
 
@@ -128,10 +129,10 @@ public class BinaryTreeImpl {
 			size++;
 			return;
 		}
-		Queue<BTNode> queue = new Queue<BTNode>();
+		Queue<BTNode> queue = new PriorityQueue<>();
 		queue.add(root);
 		while (!queue.isEmpty()) {
-			BTNode temp = queue.poll();
+			BTNode temp = queue.remove();
 			if (temp.getLeft() == null) {
 				temp.setLeft(node);
 				size++;
@@ -176,6 +177,44 @@ public class BinaryTreeImpl {
 			preOrderTraversal(root.getLeft());
 			System.out.println(root.getData());
 			preOrderTraversal(root.getRight());
+		}
+	}
+
+	public int maxValue(BTNode root) {
+		if (root == null) {
+			return 0;
+		} else {
+			int left = maxValue(root.getLeft());
+			int right = maxValue(root.getRight());
+			return Math.max(root.getData(), Math.max(left, right));
+		}
+	}
+
+	public int minValue(BTNode root) {
+		if (root == null) {
+			return 0;
+		} else {
+			int left = minValue(root.getLeft());
+			int right = minValue(root.getRight());
+			return Math.min(root.getData(), Math.min(left, right));
+		}
+	}
+
+	public int size(BTNode root) {
+		if (root == null) {
+			return 0;
+		} else {
+			int left = size(root.getLeft());
+			int right = size(root.getRight());
+			return (1 + left + right);
+		}
+	}
+
+	public int getSize(BTNode root) {
+		if (root == null) {
+			return 0;
+		} else {
+			return 1 + getSize(root.getLeft()) + getSize(root.getRight());
 		}
 	}
 }
