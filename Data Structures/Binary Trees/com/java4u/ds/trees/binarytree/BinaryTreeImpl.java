@@ -217,4 +217,14 @@ public class BinaryTreeImpl {
 			return 1 + getSize(root.getLeft()) + getSize(root.getRight());
 		}
 	}
+
+	public int height(BTNode root) {
+		if (root == null) {
+			return 0;
+		} else {
+			int left = height(root.getLeft());
+			int right = height(root.getRight());
+			return 1 + Math.max(left, right);
+		}
+	}
 }
