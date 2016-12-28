@@ -1,4 +1,4 @@
-package com.java4u.ds.queue.dto;
+package com.java4u.ds.queue;
 
 public class Node {
 	int data;

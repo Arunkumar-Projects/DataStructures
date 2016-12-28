@@ -1,6 +1,4 @@
-package com.java4u.ds.queue.impl;
-
-import com.java4u.ds.queue.dto.Node;
+package com.java4u.ds.queue;
 
 public class QueueUsingsLinkedList {
 	Node front = null;

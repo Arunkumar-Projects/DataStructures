@@ -8,7 +8,7 @@
 	</classpathentry>
 	<classpathentry kind="src" path="LinkedLists"/>
 	<classpathentry kind="src" path="Hashing"/>
-	<classpathentry kind="src" path="Queue"/>
+	<classpathentry kind="src" path="QueueDS"/>
 	<classpathentry kind="src" path="Searching"/>
 	<classpathentry kind="src" path="StackDS"/>
 	<classpathentry kind="src" path="Strings"/>
@@ -23,7 +23,6 @@
 	<classpathentry kind="src" path="Other Algorithmic Problems"/>
 	<classpathentry kind="src" path="Recursion"/>
 	<classpathentry kind="src" path="Selection Algorithms"/>
-	<classpathentry kind="src" path="QueueDS"/>
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>
 			<attribute name="optional" value="true"/>

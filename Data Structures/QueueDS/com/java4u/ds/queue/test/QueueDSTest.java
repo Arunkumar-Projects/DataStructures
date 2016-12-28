@@ -1,4 +1,6 @@
-package com.java4u.ds.queue.impl;
+package com.java4u.ds.queue.test;
+
+import com.java4u.ds.queue.QueueUsingsLinkedList;
 
 public class QueueDSTest {
 

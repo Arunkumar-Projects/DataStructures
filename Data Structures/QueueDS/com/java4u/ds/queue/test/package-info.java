@@ -5,4 +5,4 @@
  * @author varadago
  *
  */
-package com.java4u.ds.queue.impl;
+package com.java4u.ds.queue.test;
