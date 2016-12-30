@@ -60,6 +60,21 @@ public class CheckBST {
 		return (isBST(root.getLeft()) && isBST(root.getRight()));
 	}
 
+	public boolean checkBST(BSTNode root) {
+		return isBSTUtil(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+	}
+
+	private boolean isBSTUtil(BSTNode root, int low, int high) {
+		if (root == null) {
+			return true;
+		}
+		if (root.getData() < low || root.getData() > high) {
+			return false;
+		}
+		return (isBSTUtil(root.getLeft(), low, root.getData() - 1)
+				&& isBSTUtil(root.getRight(), root.getData() + 1, high));
+	}
+
 	// Using inOrder traversal - where data will be ascending order
 	public boolean isBSTUsingArray(BSTNode root) {
 		int prev = 0;
@@ -76,6 +91,7 @@ public class CheckBST {
 			if (prev < root.getData()) {
 				prev = root.getData();
 			}
+
 			boolean right = isBSTUsingArray(root.getRight());
 			return right;
 		}
