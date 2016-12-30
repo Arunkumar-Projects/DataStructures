@@ -36,11 +36,9 @@ public class BinarySearchTreeImpl {
 			root = node;
 			size++;
 		} else if (data < root.getData()) {
-			BSTNode left = insertRecursiveHelper(root.getLeft(), data);
-			root.setLeft(left);
+			root.setLeft(insertRecursiveHelper(root.getLeft(), data));
 		} else {
-			BSTNode right = insertRecursiveHelper(root.getRight(), data);
-			root.setRight(right);
+			root.setRight(insertRecursiveHelper(root.getRight(), data));
 		}
 		return root;
 	}
