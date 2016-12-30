@@ -1,23 +1,19 @@
 package com.java4u.ds.trees.binarytree;
 
-public class SumOfLeftLeaves {
-	private int sumOfLeftleaves = 0;
+public class SumOfRightLeafs {
+	private int sumOfRightLeaves = 0;
 
-	public int getSum() {
-		return sumOfLeftleaves;
-	}
-
-	public int sumOfleftLeaves(BTNode root, BTNode parent) {
+	public int SumOfrightLeaves(BTNode root, BTNode parent) {
 		if (root == null) {
 			return 0;
 		} else {
-			sumOfleftLeaves(root.getLeft(), root);
-			if (root.getLeft() == null && root.getRight() == null && parent.getLeft() == root) {
-				sumOfLeftleaves += root.getData();
+			SumOfrightLeaves(root.getLeft(), root);
+			if (root.getLeft() == null && root.getRight() == null && parent.getRight() == root) {
+				sumOfRightLeaves += root.getData();
 			}
-			sumOfleftLeaves(root.getRight(), root);
+			SumOfrightLeaves(root.getRight(), root);
 		}
-		return sumOfLeftleaves;
+		return sumOfRightLeaves;
 	}
 
 	public static void main(String[] args) {
@@ -37,8 +33,8 @@ public class SumOfLeftLeaves {
 		node2.setRight(node6);
 		node6.setRight(node7);
 
-		int sum = new SumOfLeftLeaves().sumOfleftLeaves(root, root);
-		System.out.println("Sum of left leaves: " + sum);
+		int sum = new SumOfRightLeafs().SumOfrightLeaves(root, root);
+		System.out.println("Sum of right leaves: " + sum);
 	}
 
 }
