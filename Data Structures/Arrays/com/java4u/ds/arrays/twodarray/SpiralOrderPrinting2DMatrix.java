@@ -1,4 +1,4 @@
-package com.java4u.ds.arrays;
+package com.java4u.ds.arrays.twodarray;
 
 public class SpiralOrderPrinting2DMatrix {
 
