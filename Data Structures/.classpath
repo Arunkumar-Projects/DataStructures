@@ -34,6 +34,7 @@
 	<classpathentry kind="src" path="Divide And Conquer"/>
 	<classpathentry kind="src" path="Augumented Trees"/>
 	<classpathentry kind="src" path="BitManipluation"/>
+	<classpathentry kind="src" path="PriorityQueue"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
