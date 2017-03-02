@@ -14,7 +14,9 @@ public class FibonacciSeries {
 	}
 
 	public static void main(String[] args) {
-
+		int n=82;
+		FibonacciSeries solution= new FibonacciSeries();
+		System.out.println(solution.fibonacci(n));
 	}
 
 }
