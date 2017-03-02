@@ -1,4 +1,4 @@
-package fibonacciseries;
+package fibonacciSeries;
 
 public class FibonacciSeries {
 	private static long[] fibArray = new long[100];

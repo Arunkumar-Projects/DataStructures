@@ -1,4 +1,4 @@
-package coinchange;
+package coinChange;
 
 public class CoinChangeProblem {
 

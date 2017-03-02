@@ -1,4 +1,4 @@
-package longestcommonsubsequence;
+package longestCommonSubsequence;
 
 public class LongestCommonSubsequence {
 
