@@ -1,0 +1,8 @@
+/**
+ * 
+ */
+/**
+ * @author varadago
+ *
+ */
+package KMPAlgorithm;
